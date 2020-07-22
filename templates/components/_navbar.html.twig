@@ -1,0 +1,21 @@
+{% block navbar %}
+
+    <!-- Grey with black text -->
+    <nav class="navbar navbar-expand-sm bg-light navbar-light">
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Qui suis-je ?</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ path('home', {'_fragment': 'projects'}) }}">Mes projets</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ path('home', {'_fragment': 'contact'}) }}">Me contacter</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Logs</a>
+            </li>
+        </ul>
+    </nav>
+
+{% endblock %}

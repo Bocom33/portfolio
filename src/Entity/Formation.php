@@ -28,7 +28,7 @@ class Formation
     private $content;
 
     /**
-     * @ORM\Column(type="date")
+     * @ORM\Column(type="string", length=255)
      */
     private $date;
 
@@ -61,12 +61,12 @@ class Formation
         return $this;
     }
 
-    public function getDate(): ?\DateTimeInterface
+    public function getDate(): ?string
     {
         return $this->date;
     }
 
-    public function setDate(\DateTimeInterface $date): self
+    public function setDate(?string $date): self
     {
         $this->date = $date;
 

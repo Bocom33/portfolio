@@ -1,20 +1,74 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello HomeController!{% endblock %}
+{% block title %}Portfolio Ludovic Dureau{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+    <div>
+        <p class="skill-title" id="skills">Mes Compétences</p>
+    </div>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ '/home/wilder/Desktop/portfolio/src/Controller/HomeController.php'|file_link(0) }}">src/Controller/HomeController.php</a></code></li>
-        <li>Your template at <code><a href="{{ '/home/wilder/Desktop/portfolio/templates/home/index.html.twig'|file_link(0) }}">templates/home/index.html.twig</a></code></li>
-    </ul>
+<div class="cards-skill m-3">
+    {% for skill in skills %}
+        <span class="card badge badge-info p-1">{{ skill.title }}</span>
+    {% endfor %}
 </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+<div>
+    <div>
+        <p class="projects-title card-red" id="projects">Mes projets</p>
+    </div>
+
+    {% for project in projects %}
+        <div class="card project-title">{{ project.title }} {{ project.date }}</div>
+
+        <div class="card"><a target="_blank" href="{{ project.link }}"> Pour visiter ce projet, cliquez ici.</a></div>
+
+        <br>
+
+        <div>{{ project.picture }}</div>
+
+        <br>
+    {% endfor %}
+
+</div>
+
+<br>
+
+    <p class="formations-title">Mes formations</p>
+    {% for formation in formations %}
+        <div class="card formation-title">{{ formation.title }} {{ formation.date }}</div>
+
+        <br>
+
+        <div>{{ formation.content }}</div>
+
+        <br>
+    {% endfor %}
+
+
 {% endblock %}

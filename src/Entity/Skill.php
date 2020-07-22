@@ -2,13 +2,13 @@
 
 namespace App\Entity;
 
-use App\Repository\SkillsRepository;
+use App\Repository\SkillRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass=SkillsRepository::class)
+ * @ORM\Entity(repositoryClass=SkillRepository::class)
  */
-class Skills
+class Skill
 {
     /**
      * @ORM\Id()
@@ -21,11 +21,6 @@ class Skills
      * @ORM\Column(type="string", length=255)
      */
     private $title;
-
-    /**
-     * @ORM\Column(type="text", nullable=true)
-     */
-    private $content;
 
     public function getId(): ?int
     {
@@ -40,18 +35,6 @@ class Skills
     public function setTitle(string $title): self
     {
         $this->title = $title;
-
-        return $this;
-    }
-
-    public function getContent(): ?string
-    {
-        return $this->content;
-    }
-
-    public function setContent(?string $content): self
-    {
-        $this->content = $content;
 
         return $this;
     }
