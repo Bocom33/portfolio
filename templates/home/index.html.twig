@@ -3,6 +3,9 @@
 {% block title %}Portfolio Ludovic Dureau{% endblock %}
 
 {% block body %}
+
+
+    <div id="whoAmI">Qui suis-je ?</div>
     <div>
         <p class="skill-title" id="skills">Mes Compétences</p>
     </div>
@@ -12,63 +15,41 @@
         <span class="card badge badge-info p-1">{{ skill.title }}</span>
     {% endfor %}
 </div>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
 
-<div>
+<div class="project-color">
     <div>
-        <p class="projects-title card-red" id="projects">Mes projets</p>
+        <p class="projects-title card" id="projects">Mes projets</p>
     </div>
 
     {% for project in projects %}
-        <div class="card project-title">{{ project.title }} {{ project.date }}</div>
+    <div class="project-center">
+        <div class="card project-title">Projet "{{ project.title }}" {{ project.date }}</div>
+    </div>
+    <div class="project-center project-content-color">
+        <div>Description du projet: </div>
+    </div>
+        <div class="project-center project-content-color">
+            <div class="project-content">{{ project.content }}</div>
+        </div>
+    <div class="project-align">
+        <div><img src="{{ project.picture }}" class="" alt="Image de Wild Playlist"></div>
+        <div class="project-center">
+            <div class="card card-project-link btn btn-success"><a target="_blank" href="{{ project.link }}"> Pour visiter ce projet, cliquez ici.</a></div>
+        </div>
+    </div>
 
-        <div class="card"><a target="_blank" href="{{ project.link }}"> Pour visiter ce projet, cliquez ici.</a></div>
-
-        <br>
-
-        <div>{{ project.picture }}</div>
-
-        <br>
     {% endfor %}
 
 </div>
 
-<br>
-
+<div class="formation-color">
     <p class="formations-title">Mes formations</p>
     {% for formation in formations %}
         <div class="card formation-title">{{ formation.title }} {{ formation.date }}</div>
-
-        <br>
-
         <div>{{ formation.content }}</div>
 
-        <br>
     {% endfor %}
+</div>
 
 
 {% endblock %}
