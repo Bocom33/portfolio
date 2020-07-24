@@ -123,8 +123,11 @@ img {
 .footer {
     display: flex;
     justify-content: space-evenly;
+    align-items: center;
     background-color: #000000;
     color: #e7e7e7;
+    height: 10em;
+
 }
 
 a {
